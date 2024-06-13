@@ -26,16 +26,16 @@ contract MyToken
     // mint function
     function increase (address addr,uint value)public 
     {
-        TotalSupply += value;
-        balance[addr] += value;
+        TotalSupply =TotalSupply + value;
+        balance[addr] =balance[addr] + value;
     }
     // burn function
     function decrease(address addr,uint value)public 
     {
         if (balance[addr] >= value)
         {
-            TotalSupply -= value;
-            balance[addr] -= value;
+            TotalSupply =TotalSupply - value;
+            balance[addr] =balance[addr] - value;
         }
     }
 }
